@@ -1,0 +1,37 @@
+{% include 'adminheader.html'%}
+ <div id="myCarousel" class="carousel slide banner_main" data-ride="carousel">
+       
+        
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <img class="first-slide" src="/static/images/banner.jpg" alt="First slide" style="height: 200px">
+               <div class="container">
+                  <div class="carousel-caption relative">
+                   
+                   
+                  </div>
+               </div>
+            </div>
+        </div></div>
+<center>
+	<h1>View Attendance</h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Employee</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Status</th>
+		</tr>
+		{% for row in data['att']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['firstname']}}</td>
+			<td>{{row['date']}}</td>
+			<td>{{row['time']}}</td>
+			<td>{{row['status']}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}
